@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHJZDJ_HFT_2023242.Client", "IHJZDJ_HFT_2023242.Client\IHJZDJ_HFT_2023242.Client.csproj", "{0B45D3E7-AD31-4BC6-A374-357AA91A2239}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{B50EAF13-4ED1-4879-975B-4237839B6865}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B45D3E7-AD31-4BC6-A374-357AA91A2239}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B45D3E7-AD31-4BC6-A374-357AA91A2239}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B45D3E7-AD31-4BC6-A374-357AA91A2239}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B45D3E7-AD31-4BC6-A374-357AA91A2239}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39119CDF-EE94-481E-8A31-8ABD1EDED454}
+	EndGlobalSection
+EndGlobal
