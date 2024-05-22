@@ -2,7 +2,7 @@
 using IHJZDJ_HFT_2023242.Models;
 
 
-namespace IHJZDJ_HFT_2023242.Repository.Database
+namespace IHJZDJ_HFT_2023242.Repository
 {
     public class DogDbContext : DbContext
     {

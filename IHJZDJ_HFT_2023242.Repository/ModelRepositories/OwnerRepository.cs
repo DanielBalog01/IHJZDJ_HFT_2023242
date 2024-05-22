@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IHJZDJ_HFT_2023242.Repository.ModelRepositories
+namespace IHJZDJ_HFT_2023242.Repository
 {
     internal class OwnerRepository
     {

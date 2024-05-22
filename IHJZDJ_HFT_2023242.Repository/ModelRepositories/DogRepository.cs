@@ -1,5 +1,4 @@
 ﻿using IHJZDJ_HFT_2023242.Models;
-using IHJZDJ_HFT_2023242.Repository.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,12 +15,21 @@ namespace IHJZDJ_HFT_2023242.Repository
 
         public override Dog Read(int id)
         {
-            throw new NotImplementedException();
+            return DbCtx.Dogs.FirstOrDefault(t => t.DogId == id);
         }
 
         public override void Update(Dog item)
         {
-            throw new NotImplementedException();
+            var old = Read(item.DogId);
+            if (old != null)
+            {
+                old.DogName = item.DogName;
+                old.Age = item.Age;
+                old.BreedId = item.BreedId;
+                old.OwnerId = item.OwnerId;
+
+                DbCtx.SaveChanges();
+            }
         }
     }
 }
