@@ -8,7 +8,7 @@ namespace IHJZDJ_HFT_2023242.Logic
     {
         void Create(Dog item);
         void Delete(int id);
-        Breed Read(int id);
+        Dog Read(int id);
         IEnumerable<Dog> ReadAll();
         void Update(Dog item);
     }

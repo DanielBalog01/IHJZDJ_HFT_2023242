@@ -13,29 +13,40 @@ namespace IHJZDJ_HFT_2023242.Logic
         IRepository<Dog> repository;
         IRepository<Breed> breedrepository;
         IRepository<Owner> ownerrepository;
+
+
+        public DogLogic(IRepository<Dog> repository, IRepository<Breed> breedrepository, IRepository<Owner> ownerrepository)
+        {
+            this.repository = repository;
+            this.breedrepository = breedrepository;
+            this.ownerrepository = ownerrepository;
+        }
+
         public void Create(Dog item)
         {
-            throw new NotImplementedException();
+            if (item.DogName is null || item.DogName.Length < 4) throw new ArgumentException("Wrong dog name");
+            this.repository.Create(item);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            this.repository.Delete(id);
         }
 
-        public Breed Read(int id)
+        public Dog Read(int id)
         {
-            throw new NotImplementedException();
+            return this.repository.Read(id);
         }
 
         public IEnumerable<Dog> ReadAll()
         {
-            throw new NotImplementedException();
+            return this.repository.ReadAll();
         }
 
         public void Update(Dog item)
         {
-            throw new NotImplementedException();
+            if (item.DogName is null || item.DogName.Length < 4) throw new ArgumentException("Wrong player name");
+            this.repository.Update(item);
         }
     }
 }

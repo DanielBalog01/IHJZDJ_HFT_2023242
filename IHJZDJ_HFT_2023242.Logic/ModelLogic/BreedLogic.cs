@@ -10,9 +10,16 @@ namespace IHJZDJ_HFT_2023242.Logic
 {
     public class BreedLogic : IBreedLogic
     {
+        IRepository<Breed> repository;
+
+        public BreedLogic(IRepository<Breed> repository) 
+        {
+            this.repository = repository;
+        }
         public void Create(Breed item)
         {
-            throw new NotImplementedException();
+            if (item.BreedName is null || item.BreedName.Length < 2) throw new ArgumentException("Wrong team name!");
+            this.repository.Create(item);
         }
 
         public void Delete(int id)
@@ -32,7 +39,8 @@ namespace IHJZDJ_HFT_2023242.Logic
 
         public void Update(Breed item)
         {
-            throw new NotImplementedException();
+            if (item.BreedName is null || item.BreedName.Length < 2) throw new ArgumentException("Wrong team name!");
+            this.repository.Update(item);
         }
     }
 }

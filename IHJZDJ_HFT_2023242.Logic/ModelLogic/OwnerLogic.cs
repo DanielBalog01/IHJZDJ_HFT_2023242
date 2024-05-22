@@ -9,6 +9,12 @@ namespace IHJZDJ_HFT_2023242.Logic
 {
     public class OwnerLogic : IOwnerLogic
     {
+        IRepository<Owner> repository;
+
+        public OwnerLogic(IRepository<Owner> repository)
+        {
+            this.repository = repository;
+        }
         public void Create(Owner item)
         {
             throw new NotImplementedException();
