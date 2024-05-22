@@ -8,5 +8,6 @@ namespace IHJZDJ_HFT_2023242.Logic.ModellLogic
 {
     public class OwnerLogic
     {
+
     }
 }
