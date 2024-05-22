@@ -18,7 +18,7 @@ namespace IHJZDJ_HFT_2023242.Logic
         }
         public void Create(Breed item)
         {
-            if (item.BreedName is null || item.BreedName.Length < 2) throw new ArgumentException("Wrong team name!");
+            if (item.BreedName is null || item.BreedName.Length < 2) throw new ArgumentException("Wrong breed name!");
             this.repository.Create(item);
         }
 
@@ -39,7 +39,7 @@ namespace IHJZDJ_HFT_2023242.Logic
 
         public void Update(Breed item)
         {
-            if (item.BreedName is null || item.BreedName.Length < 2) throw new ArgumentException("Wrong team name!");
+            if (item.BreedName is null || item.BreedName.Length < 2) throw new ArgumentException("Wrong breed name!");
             this.repository.Update(item);
         }
     }

@@ -17,7 +17,8 @@ namespace IHJZDJ_HFT_2023242.Logic
         }
         public void Create(Owner item)
         {
-            throw new NotImplementedException();
+            if (item.OwnerName is null || item.OwnerName.Length < 2) throw new ArgumentException("Wrong owner name!");
+            this.repository.Update(item);
         }
 
         public void Delete(int id)
@@ -37,7 +38,8 @@ namespace IHJZDJ_HFT_2023242.Logic
 
         public void Update(Owner item)
         {
-            throw new NotImplementedException();
+            if (item.OwnerName is null || item.OwnerName.Length < 2) throw new ArgumentException("Wrong owner name!");
+            this.repository.Update(item);
         }
     }
 }
