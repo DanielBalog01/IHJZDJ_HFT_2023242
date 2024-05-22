@@ -13,12 +13,11 @@ namespace IHJZDJ_HFT_2023242.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int TeamId { get; set; }
+        public int BreedId { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string TeamName { get; set; }
-        public int ChampionshipWins { get; set; }
+        public string BreedName { get; set; }
         [JsonIgnore]
         [NotMapped]
         public virtual ICollection<Dog> Dogs { get; set; }
