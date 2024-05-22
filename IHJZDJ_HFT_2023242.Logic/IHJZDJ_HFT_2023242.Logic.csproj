@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="ModellLogic\" />
+    <ProjectReference Include="..\IHJZDJ_HFT_2023242.Models\IHJZDJ_HFT_2023242.Models.csproj" />
+    <ProjectReference Include="..\IHJZDJ_HFT_2023242.Repository\IHJZDJ_HFT_2023242.Repository.csproj" />
   </ItemGroup>
 
 </Project>

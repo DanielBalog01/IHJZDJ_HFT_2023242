@@ -10,5 +10,11 @@
     <PackageReference Include="NUnit" Version="3.13.2" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IHJZDJ_HFT_2023242.Logic\IHJZDJ_HFT_2023242.Logic.csproj" />
+    <ProjectReference Include="..\IHJZDJ_HFT_2023242.Models\IHJZDJ_HFT_2023242.Models.csproj" />
+    <ProjectReference Include="..\IHJZDJ_HFT_2023242.Repository\IHJZDJ_HFT_2023242.Repository.csproj" />
+  </ItemGroup>
   
 </Project>
