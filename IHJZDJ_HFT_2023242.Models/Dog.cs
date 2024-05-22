@@ -12,7 +12,7 @@ namespace IHJZDJ_HFT_2023242.Models
         public int DogId { get; set; }
         [StringLength(50)]
         [Required]
-        public string Name { get; set; }
+        public string DogName { get; set; }
         public int Age { get; set; }
 
         [ForeignKey("BreedId")]
