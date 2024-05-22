@@ -2,9 +2,9 @@
 using IHJZDJ_HFT_2023242.Models;
 using System.Collections.Generic;
 
-namespace IHJZDJ_HFT_2023242.Logic.Interfaces
+namespace IHJZDJ_HFT_2023242.Logic
 {
-    public interface IOwner
+    public interface IOwnerLogic
     {
         void Create(Owner item);
         void Delete(int id);
