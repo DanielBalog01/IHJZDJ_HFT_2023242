@@ -27,27 +27,27 @@ namespace IHJZDJ_HFT_2023242.Endpoint.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Dog> GoldDogs()
+        public IEnumerable<Dog> GoldenRetDog()
         {
-            return this.logic.JohnDogs();
+            return this.logic.GoldenRetDog();
         }
 
         [HttpGet]
-        public IEnumerable<Dog> JohnDogs()
+        public IEnumerable<Dog> Below5YearsAndTheirBreed()
         {
-            return this.logic.JohnDogs();
+            return this.logic.Below5YearsAndTheirBreed();
         }
 
-        [HttpGet]
-        public IEnumerable<Dog> JohnDogs()
+        [HttpGet("{breed}")]
+        public IEnumerable<string> DogByBreed(string breed)
         {
-            return this.logic.JohnDogs();
+            return this.logic.DogByBreed(breed);
         }
 
-        [HttpGet]
-        public IEnumerable<Dog> JohnDogs()
+        [HttpGet("{owner}")]
+        public IEnumerable<string> DogsByOwner(string owner)
         {
-            return this.logic.JohnDogs();
+            return this.logic.DogsByOwner(owner);
         }
 
 
