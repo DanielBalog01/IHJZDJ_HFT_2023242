@@ -126,7 +126,7 @@ namespace IHJZDJ_HFT_2023242.Logic
             var res = from s in repository.ReadAll()
                       from s2 in breedrepository.ReadAll()
                       from s3 in ownerrepository.ReadAll()
-                      where s.BreedId == s2.BreedId && s.OwnerId == s3.OwnerId && s2.BreedName.ToLower() == owner.ToLower()
+                      where s.BreedId == s2.BreedId && s.OwnerId == s3.OwnerId && s3.OwnerName.ToLower() == owner.ToLower()
                       select s.DogName;
 
             return res;
