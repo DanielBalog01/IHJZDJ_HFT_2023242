@@ -158,8 +158,6 @@ namespace IHJZDJ_HFT_2023242.Test
         public void Below5YearsnAndTheirBreedTest()
         {
             var result = dl.Below5YearsAndTheirBreed();
-
-
             Assert.AreEqual(7, result.Count());
             Assert.IsTrue(result.All( x => x.Age<=5));
         
