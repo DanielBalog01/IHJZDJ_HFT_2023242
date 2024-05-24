@@ -24,17 +24,17 @@ namespace IHJZDJ_HFT_2023242.Logic
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            this.repository.Delete(id);
         }
 
         public Breed Read(int id)
         {
-            throw new NotImplementedException();
+            return this.repository.Read(id);
         }
 
         public IEnumerable<Breed> ReadAll()
         {
-            throw new NotImplementedException();
+            return this.repository.ReadAll();
         }
 
         public void Update(Breed item)

@@ -18,22 +18,22 @@ namespace IHJZDJ_HFT_2023242.Logic
         public void Create(Owner item)
         {
             if (item.OwnerName is null || item.OwnerName.Length < 2) throw new ArgumentException("Wrong owner name!");
-            this.repository.Update(item);
+            this.repository.Create(item);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            this.repository.Delete(id);
         }
 
         public Owner Read(int id)
         {
-            throw new NotImplementedException();
+            return this.repository.Read(id);
         }
 
         public IEnumerable<Owner> ReadAll()
         {
-            throw new NotImplementedException();
+            return this.repository.ReadAll();
         }
 
         public void Update(Owner item)
