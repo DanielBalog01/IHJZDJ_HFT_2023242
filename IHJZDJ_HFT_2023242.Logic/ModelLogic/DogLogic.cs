@@ -45,7 +45,7 @@ namespace IHJZDJ_HFT_2023242.Logic
 
         public void Update(Dog item)
         {
-            if (item.DogName is null || item.DogName.Length < 4) throw new ArgumentException("Wrong player name");
+            if (item.DogName is null || item.DogName.Length < 4) throw new ArgumentException("Wrong dog name");
             this.repository.Update(item);
         }
 
@@ -54,7 +54,7 @@ namespace IHJZDJ_HFT_2023242.Logic
         {
             var result = from source in repository.ReadAll()
                          from source2 in breedrepository.ReadAll()
-                         where source.BreedId == source2.BreedId && source2.BreedName == "Golden Retriver"
+                         where source.BreedId == source2.BreedId && source2.BreedName == "Golden Retriever"
                          select new Dog
                          {
                              DogName = source.DogName,
@@ -68,6 +68,29 @@ namespace IHJZDJ_HFT_2023242.Logic
             return result;
 
         }
+
+        public IEnumerable<Dog> JohnDogs()
+        {
+            var res = from source in repository.ReadAll()
+                      from s2 in ownerrepository.ReadAll()
+                      where source.OwnerId == s2.OwnerId && s2.OwnerName == "John Doe"
+                      select new Dog
+                      {
+                          DogName = source.DogName,
+                          Age = source.Age,
+                          Owner = source.Owner,
+                          OwnerId = source.OwnerId,
+                          BreedId = source.BreedId,
+                          Breed= source.Breed,
+                          DogId = source.DogId
+                      };
+
+
+            return res;
+        }
+
+
+
 
 
 
