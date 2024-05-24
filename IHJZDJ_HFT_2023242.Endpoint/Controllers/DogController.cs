@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using IHJZDJ_HFT_2023242.Logic;
+using IHJZDJ_HFT_2023242.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -19,34 +20,37 @@ namespace IHJZDJ_HFT_2023242.Endpoint.Controllers
 
         // GET: api/<DogController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Dog> ReadAll()
         {
-            return new string[] { "value1", "value2" };
+            return this.logic.ReadAll();
         }
 
         // GET api/<DogController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Dog Read(int id)
         {
-            return "value";
+            return this.logic.Read(id);
         }
 
         // POST api/<DogController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Create([FromBody] Dog value)
         {
+            this.logic.Create(value);
         }
 
         // PUT api/<DogController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public void Update(int id, [FromBody] Dog value)
         {
+            this.logic.Update(value);
         }
 
         // DELETE api/<DogController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            this.logic.Delete(id);
         }
     }
 }

@@ -1,3 +1,6 @@
+using IHJZDJ_HFT_2023242.Logic;
+using IHJZDJ_HFT_2023242.Models;
+using IHJZDJ_HFT_2023242.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -26,7 +29,15 @@ namespace IHJZDJ_HFT_2023242.Endpoint
         public void ConfigureServices(IServiceCollection services)
         {
 
-
+          
+            services.AddControllers();
+            services.AddScoped<IDogLogic, DogLogic>();
+            services.AddScoped<IBreedLogic, BreedLogic>();
+            services.AddScoped<IOwnerLogic, OwnerLogic>();
+            services.AddTransient<IRepository<Dog>, DogRepository>();
+            services.AddTransient<IRepository<Breed>, BreedRepository>();
+            services.AddTransient<IRepository<Owner>, OwnerRepository>();
+            services.AddScoped<DogDbContext, DogDbContext>();
 
 
             services.AddControllers();

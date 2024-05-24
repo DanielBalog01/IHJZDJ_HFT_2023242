@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using IHJZDJ_HFT_2023242.Logic;
+using IHJZDJ_HFT_2023242.Models;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -9,36 +11,41 @@ namespace IHJZDJ_HFT_2023242.Endpoint.Controllers
     [ApiController]
     public class BreedController : ControllerBase
     {
-        // GET: api/<BreedController>
+        IBreedLogic logic;
+
+        public BreedController(IBreedLogic logic)
+        {
+            this.logic = logic;
+        }
+
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Breed> ReadAll()
         {
-            return new string[] { "value1", "value2" };
+            return this.logic.ReadAll();
         }
 
-        // GET api/<BreedController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Breed Read(int id)
         {
-            return "value";
+            return this.logic.Read(id);
         }
 
-        // POST api/<BreedController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Create([FromBody] Breed value)
         {
+            this.logic.Create(value);
         }
 
-        // PUT api/<BreedController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public void Update(int id, [FromBody] Breed value)
         {
+            this.logic.Update(value);
         }
 
-        // DELETE api/<BreedController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            this.logic.Delete(id);
         }
     }
 }
