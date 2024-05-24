@@ -90,6 +90,28 @@ namespace IHJZDJ_HFT_2023242.Logic
         }
 
 
+        public IEnumerable<Dog> Below5YearsAndTheirBreed()
+        {
+            var res = from s in repository.ReadAll()
+                      from s2 in ownerrepository.ReadAll()
+                      from s3 in breedrepository.ReadAll()
+                      where s.BreedId == s3.BreedId && s.OwnerId == s2.OwnerId && s.Age < 5
+                      select new Dog
+                      {
+                          DogName = s.DogName,
+                          Age = s.Age,
+                          Breed = s.Breed,
+                          BreedId = s.BreedId,
+                          Owner = s.Owner,
+                          OwnerId = s.OwnerId,
+                          DogId = s.DogId
+                      };
+            return res;
+        }
+
+
+
+
 
 
 
