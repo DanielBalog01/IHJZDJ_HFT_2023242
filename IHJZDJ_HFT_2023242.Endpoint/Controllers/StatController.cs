@@ -7,7 +7,7 @@ using IHJZDJ_HFT_2023242.Models;
 
 namespace IHJZDJ_HFT_2023242.Endpoint.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]/[action]")]
     [ApiController]
     public class StatController : ControllerBase
     {
@@ -18,36 +18,34 @@ namespace IHJZDJ_HFT_2023242.Endpoint.Controllers
         {
             this.logic = logic;
         }
-
-
         [HttpGet]
         public IEnumerable<Dog> JohnDogs()
         {
-            return this.logic.JohnDogs();
+            return logic.JohnDogs();
         }
 
         [HttpGet]
         public IEnumerable<Dog> GoldenRetDog()
         {
-            return this.logic.GoldenRetDog();
+            return logic.GoldenRetDog();
         }
 
         [HttpGet]
         public IEnumerable<Dog> Below5YearsAndTheirBreed()
         {
-            return this.logic.Below5YearsAndTheirBreed();
+            return logic.Below5YearsAndTheirBreed();
         }
 
         [HttpGet("{breed}")]
         public IEnumerable<string> DogByBreed(string breed)
         {
-            return this.logic.DogByBreed(breed);
+            return logic.DogByBreed(breed);
         }
 
         [HttpGet("{owner}")]
         public IEnumerable<string> DogsByOwner(string owner)
         {
-            return this.logic.DogsByOwner(owner);
+            return logic.DogsByOwner(owner);
         }
 
 

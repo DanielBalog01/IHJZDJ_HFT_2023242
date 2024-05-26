@@ -7,7 +7,7 @@ using IHJZDJ_HFT_2023242.Models;
 
 namespace IHJZDJ_HFT_2023242.Endpoint.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class DogController : ControllerBase
     {
