@@ -157,27 +157,6 @@ namespace IHJZDJ_HFT_2023242.Client
             Console.WriteLine("Now Press Enter!");
             Console.ReadLine();
         }
-        /*
-        static void DogsByBreed()
-        {
-            Console.Write("Enter Breed name: ");
-            string breed = Console.ReadLine();
-            List<string> dogsByBreed = rest.Get<string>($"stat/DogsByBreed/{breed}");
-            if (dogsByBreed.Count == 0)
-            {
-                Console.WriteLine("Alert: Breed doesn't exist!");
-            }
-            else
-            {
-                foreach (var item in dogsByBreed)
-                {
-                    Console.WriteLine(item);
-                }
-            }
-            Console.WriteLine("Now Press Enter!");
-            Console.ReadLine();
-        }
-        */
 
         static void GoldenRetrieverDogs()
         {
