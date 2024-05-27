@@ -14,10 +14,12 @@ namespace IHJZDJ_HFT_2023242.Endpoint.Controllers
 
         IDogLogic logic;
 
+
         public StatController(IDogLogic logic)
         {
             this.logic = logic;
         }
+        /*
         [HttpGet]
         public IEnumerable<Dog> JohnDogs()
         {
@@ -49,7 +51,37 @@ namespace IHJZDJ_HFT_2023242.Endpoint.Controllers
         }
 
 
+        */
 
+        [HttpGet]
+        public IEnumerable<Dog> JohnDogs()
+        {
+            return logic.JohnDogs();
+        }
+
+        [HttpGet]
+        public IEnumerable<Dog> GoldenRetDog()
+        {
+            return logic.GoldenRetDog();
+        }
+
+        [HttpGet]
+        public IEnumerable<Dog> Below5YearsAndTheirBreed()
+        {
+            return logic.Below5YearsAndTheirBreed();
+        }
+
+        [HttpGet("{breed}")]
+        public IEnumerable<string> DogByBreed(string breed)
+        {
+            return logic.DogByBreed(breed);
+        }
+
+        [HttpGet("{owner}")]
+        public IEnumerable<string> DogsByOwner(string owner)
+        {
+            return logic.DogsByOwner(owner);
+        }
 
     }
 }

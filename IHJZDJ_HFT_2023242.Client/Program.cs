@@ -135,18 +135,117 @@ namespace IHJZDJ_HFT_2023242.Client
             Console.WriteLine("Successful delete! Press Enter!");
             Console.ReadLine();
         }
+       
+        static void JohnDoeDogs()
+        {
+            List<Dog> johnDogs = rest.Get<Dog>("stat/JohnDogs");
+            foreach (var item in johnDogs)
+            {
+                Console.WriteLine(item.DogName);
+            }
+            Console.WriteLine("Now Press Enter!");
+            Console.ReadLine();
+        }
+        
+        static void Below5YearsAndTheirBreed()
+        {
+            List<Dog> below5YearsDogs = rest.Get<Dog>("stat/Below5YearsAndTheirBreed");
+            foreach (var item in below5YearsDogs)
+            {
+                Console.WriteLine(item.DogName + " BreedId: " + item.BreedId);
+            }
+            Console.WriteLine("Now Press Enter!");
+            Console.ReadLine();
+        }
+        /*
+        static void DogsByBreed()
+        {
+            Console.Write("Enter Breed name: ");
+            string breed = Console.ReadLine();
+            List<string> dogsByBreed = rest.Get<string>($"stat/DogsByBreed/{breed}");
+            if (dogsByBreed.Count == 0)
+            {
+                Console.WriteLine("Alert: Breed doesn't exist!");
+            }
+            else
+            {
+                foreach (var item in dogsByBreed)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+            Console.WriteLine("Now Press Enter!");
+            Console.ReadLine();
+        }
+        */
+
+        static void GoldenRetrieverDogs()
+        {
+            List<Dog> goldenRetrievers = rest.Get<Dog>("stat/GoldenRetDog");
+            foreach (var item in goldenRetrievers)
+            {
+                Console.WriteLine(item.DogName);
+            }
+            Console.WriteLine("Now Press Enter!");
+            Console.ReadLine();
+        }
+
+        static void DogsByBreed()
+        {
+            Console.Write("Enter Breed name: ");
+            string breed = Console.ReadLine();
+            List<string> dogsByBreed = rest.Get<string>($"stat/DogByBreed/{breed}");
+            if (dogsByBreed.Count == 0)
+            {
+                Console.WriteLine("Alert: Breed doesn't exist!");
+            }
+            else
+            {
+                foreach (var item in dogsByBreed)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+            Console.WriteLine("Now Press Enter!");
+            Console.ReadLine();
+        }
+        static void DogsByOwner()
+        {
+            Console.Write("Enter Owner name: ");
+            string owner = Console.ReadLine();
+            List<string> dogsByOwner = rest.Get<string>($"stat/DogsByOwner/{owner}");
+            if (dogsByOwner.Count == 0)
+            {
+                Console.WriteLine("Alert: Owner doesn't exist!");
+            }
+            else
+            {
+                foreach (var item in dogsByOwner)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+            Console.WriteLine("Now Press Enter!");
+            Console.ReadLine();
+        }
 
 
 
         static void Main(string[] args)
         {
-            rest = new RestService("http://localhost:36502/","dog");
+            rest = new RestService("http://localhost:36502/");
 
             var dogSubMenu = new ConsoleMenu(args, level: 1)
                 .Add("List", () => List("Dog"))
                 .Add("Create", () => Create("Dog"))
                 .Add("Delete", () => Delete("Dog"))
-                .Add("Update", () => Update("Dog"));
+                .Add("Update", () => Update("Dog"))
+                .Add("GoldenRetrieverDogs", () => GoldenRetrieverDogs())
+                .Add("JohnDoeDogs", () => JohnDoeDogs())
+                .Add("Below5YearsAndTheirBreed", () => Below5YearsAndTheirBreed())
+                .Add("DogsByBreed", () => DogsByBreed())
+                .Add("DogsByOwner", () => DogsByOwner())
+                .Add("Exit", ConsoleMenu.Close);
 
             var breedSubMenu = new ConsoleMenu(args, level: 1)
                 .Add("List", () => List("Breed"))
