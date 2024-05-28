@@ -54,7 +54,7 @@ namespace IHJZDJ_HFT_2023242.Logic
         {
             var result = from source in repository.ReadAll()
                          from source2 in breedrepository.ReadAll()
-                         where source.BreedId == source2.BreedId && source2.BreedName == "German Shepherd"
+                         where source.BreedId == source2.BreedId && source2.BreedName == "Golden Retriever"
                          select new Dog
                          {
                              DogName = source.DogName,
